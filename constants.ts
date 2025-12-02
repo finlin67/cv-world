@@ -1,16 +1,19 @@
+// constants.ts
 import { District } from './types';
 
-// The requested background image
-export const MAP_IMAGE_URL = 'https://michaelfindling.com/wp-content/uploads/2025/11/resume-world-bkgrd.jpg';
-export const MAP_WIDTH = 4055;
-export const MAP_HEIGHT = 1720;
+// UPDATE THIS filename to match your new upload
+export const MAP_IMAGE_URL = '/map-v2.jpg'; 
+
+// UPDATE THESE if your image dimensions are different
+export const MAP_WIDTH = 4096; 
+export const MAP_HEIGHT = 3072;
 
 export const DISTRICTS: Record<string, District> = {
   'wall-street': {
     id: 'wall-street',
     name: 'Wall Street District',
     description: 'Early career, finance, business analysis, enterprise training.',
-    color: 'bg-district-wallstreet',
+    color: 'bg-green-500',
     icon: 'chart-line',
     hexColor: '#4ade80',
   },
@@ -18,7 +21,7 @@ export const DISTRICTS: Record<string, District> = {
     id: 'silicon-valley',
     name: 'Silicon Valley District',
     description: 'SaaS, tech companies, ABM roles, enterprise program management.',
-    color: 'bg-district-silicon',
+    color: 'bg-blue-400',
     icon: 'chip',
     hexColor: '#60a5fa',
   },
@@ -26,7 +29,7 @@ export const DISTRICTS: Record<string, District> = {
     id: 'marketing',
     name: 'Marketing Expertise',
     description: 'Skills, strategies, frameworks, achievements, ABM, operations, demand gen.',
-    color: 'bg-district-marketing',
+    color: 'bg-pink-500',
     icon: 'bullhorn',
     hexColor: '#f472b6',
   },
@@ -34,7 +37,7 @@ export const DISTRICTS: Record<string, District> = {
     id: 'technologies',
     name: 'Technologies District',
     description: 'MarTech stack, CRM, MAP, ABM platforms, data tools, analytics.',
-    color: 'bg-district-tech',
+    color: 'bg-indigo-500',
     icon: 'server',
     hexColor: '#a78bfa',
   },
@@ -42,7 +45,7 @@ export const DISTRICTS: Record<string, District> = {
     id: 'industries',
     name: 'Industries District',
     description: 'Sectors supported: SaaS, Manufacturing, Financial Services, Tech, Logistics.',
-    color: 'bg-district-industries',
+    color: 'bg-amber-500',
     icon: 'building',
     hexColor: '#fbbf24',
   },

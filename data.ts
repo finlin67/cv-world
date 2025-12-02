@@ -1,220 +1,332 @@
-import { Hotspot } from './types';
+import { DISTRICTS } from './constants';
 
-// Aggregated dataset based on Michael Findling's resume
-
-export const HOTSPOTS: Hotspot[] = [
-  // --- Wall Street District (Early Career & Finance) ---
+export const RESUME_DATA = [
+  // =========================================================================
+  // WALL STREET DISTRICT (2000 - 2006)
+  // Location: Top Left (The Stone Buildings)
+  // =========================================================================
   {
-    id: 'role-early-finance',
-    districtId: 'wall-street',
-    type: 'role',
-    label: 'Early Career: Finance',
-    summary: 'Foundations at Goldman Sachs, S&P, and Bank of Tokyo.',
-    description: 'Built a disciplined foundation in data analysis and systems strategy. \n\nAt **Standard & Poor\'s**, led the implementation of Learning Management Systems (LMS), delivering projects on-time and within budget. \n\nAt **Bank of Tokyo-Mitsubishi**, designed and trained teams on Credit Portfolio Management Systems. \n\nAt **Goldman Sachs**, directed enterprise LMS implementation. These roles honed the ability to manage complex data structures that would later fuel Marketing Operations success.',
-    coordinates: { x: 18, y: 75 },
-    relatedIds: ['ind-fintech', 'skill-analytics'],
-    metrics: ['Delivered LMS on-time/budget (S&P)', 'Training & Dev Analyst (Goldman)'],
-    icon: 'briefcase'
+    id: "role-goldman",
+    label: "Goldman Sachs",
+    districtId: "wall-street",
+    type: "role",
+    startYear: 2000,
+    endYear: 2002,
+    x: 650, y: 750, 
+    summary: "L&PD Analyst.",
+    description: "Directed implementation of Enterprise Learning Management System (LMS) and managed all eLearning projects and reporting tools.",
+    metrics: ["Enterprise LMS Launch"],
+    relatedIds: ["skill-training", "ind-fintech"]
   },
   {
-    id: 'role-salem',
-    districtId: 'wall-street',
-    type: 'role',
-    label: 'SalemGlobal Internet',
-    summary: 'Senior Manager of Online Marketing.',
-    description: 'Managed business development and client prospecting. Achieved significant growth in new clients year-over-year and maintained high retention rates through dedicated client support and onboarding.',
-    coordinates: { x: 25, y: 65 },
-    relatedIds: ['skill-demand'],
-    metrics: ['500% growth in new clients YoY', '85% retention rate'],
-    icon: 'briefcase'
-  },
-
-  // --- Silicon Valley District (Tech & Leadership) ---
-  {
-    id: 'role-prgx',
-    districtId: 'silicon-valley',
-    type: 'role',
-    label: 'PRGX Global',
-    summary: 'Director of Digital Marketing & ABM (2024-2025).',
-    description: 'Architected the company’s first unified revenue operating model. Integrated Demandbase, CRM, and analytics to synchronize workflows. Spearheaded a BDR performance audit generating 150 qualified opportunities per quarter.',
-    coordinates: { x: 20, y: 25 },
-    relatedIds: ['skill-ops', 'tech-abm-platforms', 'ind-saas'],
-    metrics: ['87% pipeline boost YoY', '45% YoY Marketing attributed pipeline', 'Cut reporting time by 30 hrs/mo'],
-    icon: 'briefcase'
+    id: "role-sp",
+    label: "Standard & Poor's",
+    districtId: "wall-street",
+    type: "role",
+    startYear: 2003,
+    endYear: 2005,
+    x: 850, y: 650, 
+    summary: "LMS Strategist.",
+    description: "Recognized by CEO for delivering one of the first Marketing Technology projects completed on-time and within budget in a decade.",
+    metrics: ["CEO Recognition", "Global Reporting System"],
+    relatedIds: ["role-goldman", "skill-training"]
   },
   {
-    id: 'role-amcs',
-    districtId: 'silicon-valley',
-    type: 'role',
-    label: 'AMCS Group',
-    summary: 'Director of Account-Based Marketing (2023-2024).',
-    description: 'Built an end-to-end ABM framework targeting 50+ enterprise companies in logistics and manufacturing. Synchronized GTM narratives to restructure outbound communications prioritization.',
-    coordinates: { x: 28, y: 35 },
-    relatedIds: ['skill-abm', 'ind-logistics'],
-    metrics: ['$1.2M pipeline in 90 days', '35% MQL lift in 60 days', '50% improvement in campaign ROI'],
-    icon: 'briefcase'
-  },
-  {
-    id: 'role-redhat',
-    districtId: 'silicon-valley',
-    type: 'role',
-    label: 'Red Hat',
-    summary: 'Sr. Principal Program Manager, ABM (2021-2023).',
-    description: 'Guided marketing activation for Global Enterprise accounts. Developed verticalized ABM strategies and internal communication workflows. Created focused strategies for customer lifecycle stages.',
-    coordinates: { x: 15, y: 40 },
-    relatedIds: ['skill-abm', 'ind-saas'],
-    metrics: ['30% new enterprise account intros', '25% MQL increase', '30% decrease in Cost Per Lead'],
-    icon: 'briefcase'
-  },
-  {
-    id: 'role-salesforce',
-    districtId: 'silicon-valley',
-    type: 'role',
-    label: 'Salesforce',
-    summary: 'Global Marketing Ops Leader (2014-2021).',
-    description: 'A 7-year tenure driving global marketing operations and enterprise campaigns. Implemented sales KPI dashboards, led cross-functional initiatives for 6sense implementation, and built enablement programs for resellers.',
-    coordinates: { x: 35, y: 30 },
-    relatedIds: ['tech-salesforce', 'skill-ops', 'tech-abm-platforms'],
-    metrics: ['65% lift in SQLs', '20% marketing pipeline lift', '40% partner revenue boost'],
-    icon: 'briefcase'
-  },
-  {
-    id: 'role-startups',
-    districtId: 'silicon-valley',
-    type: 'role',
-    label: 'Growth Stage Leadership',
-    summary: 'Get Satisfaction, Crowd Factory, Embarcadero.',
-    description: 'Held various leadership roles including **Director of Demand Gen** at Get Satisfaction and **Sr. Manager Marketing** at Crowd Factory (acquired by Marketo). focused on full-funnel demand generation, SEO/SEM, and lead management.',
-    coordinates: { x: 10, y: 50 },
-    relatedIds: ['skill-demand', 'tech-martech'],
-    metrics: ['164% unique visitor increase (Crowd Factory)', '43% net new leads QoQ (Crowd Factory)'],
-    icon: 'briefcase'
+    id: "role-btm",
+    label: "Bank of Tokyo-Mitsubishi",
+    districtId: "wall-street",
+    type: "role",
+    startYear: 2005,
+    endYear: 2006,
+    x: 800, y: 900, 
+    summary: "Business Analyst.",
+    description: "Designed, implemented and trained team members on internal Credit Portfolio Management System (CPMS).",
+    metrics: ["App Development", "Test Planning"],
+    relatedIds: ["role-sp", "ind-fintech"]
   },
 
-  // --- Marketing Expertise District ---
+  // =========================================================================
+  // MARKETING DISTRICT (The Bridge: 2006 - 2011)
+  // Location: Top Right (Media Towers)
+  // =========================================================================
   {
-    id: 'skill-abm',
-    districtId: 'marketing',
-    type: 'skill',
-    label: 'ABM Strategy',
-    summary: 'High-value account targeting & orchestration.',
-    description: 'ITSMA ABM Certified expert. Comprehensive framework development for 1:1, 1:Few, and 1:Many campaigns. Proven track record of aligning Sales and Marketing around target accounts to drive revenue.',
-    coordinates: { x: 50, y: 50 },
-    relatedIds: ['role-amcs', 'role-redhat', 'tech-abm-platforms'],
-    icon: 'lightbulb'
+    id: "role-salem",
+    label: "SalemGlobal Internet",
+    districtId: "marketing",
+    type: "role",
+    startYear: 2006,
+    endYear: 2008,
+    x: 3000, y: 700,
+    summary: "Sr. Manager Online Marketing.",
+    description: "Achieved 500% growth in new clients YoY and consistently maintained 85% retention and renewal rate.",
+    metrics: ["500% Client Growth", "85% Retention"],
+    relatedIds: ["skill-seo", "skill-ppc"]
   },
   {
-    id: 'skill-ops',
-    districtId: 'marketing',
-    type: 'skill',
-    label: 'Marketing Operations',
-    summary: 'RevOps, Data Governance & Efficiency.',
-    description: 'Architecting revenue engines. Expertise in reducing manual reporting times (e.g., from 4 days to 2 hours at Salesforce), improving database health by 30%+, and implementing scoring models.',
-    coordinates: { x: 58, y: 45 },
-    relatedIds: ['role-prgx', 'role-salesforce', 'tech-salesforce'],
-    icon: 'lightbulb'
+    id: "role-embarcadero",
+    label: "Embarcadero Tech",
+    districtId: "marketing",
+    type: "role",
+    startYear: 2008,
+    endYear: 2011,
+    x: 3300, y: 600,
+    summary: "Global Online Marketing Mgr.",
+    description: "Managed SEO, Paid Advertising (SEM), and Marketing Operations (Eloqua/Salesforce) for global campaigns.",
+    metrics: ["SEO Analysis", "Marketing Ops Lead"],
+    relatedIds: ["role-salem", "tech-salesforce"]
   },
   {
-    id: 'skill-demand',
-    districtId: 'marketing',
-    type: 'skill',
-    label: 'Demand Generation',
-    summary: 'Integrated multi-channel campaigns.',
-    description: 'Full-funnel optimization strategies. Mastery of SEO/SEM, paid social, and content syndication to drive MQL to SQL conversion. Experience managing multi-million dollar budgets.',
-    coordinates: { x: 62, y: 55 },
-    relatedIds: ['role-prgx', 'role-startups'],
-    icon: 'lightbulb'
+    id: "skill-seo",
+    label: "SEO & Content",
+    districtId: "marketing",
+    type: "skill",
+    startYear: 2006,
+    endYear: 2025,
+    x: 3600, y: 550,
+    summary: "Organic Growth Strategy.",
+    description: "Technical SEO, site architecture, and content strategy for long-term visibility.",
+    metrics: [],
+    relatedIds: ["role-salem", "role-embarcadero"]
   },
   {
-    id: 'skill-analytics',
-    districtId: 'marketing',
-    type: 'skill',
-    label: 'Analytics & Attribution',
-    summary: 'Data-driven decision making.',
-    description: 'Expertise in multi-touch attribution models, Tableau, GA4, and connecting disparate data sources to tell a cohesive performance story. Formulated data quality frameworks.',
-    coordinates: { x: 55, y: 65 },
-    relatedIds: ['role-early-finance', 'tech-analytics'],
-    icon: 'lightbulb'
-  },
-
-  // --- Technologies District ---
-  {
-    id: 'tech-salesforce',
-    districtId: 'technologies',
-    type: 'technology',
-    label: 'Salesforce Ecosystem',
-    summary: 'CRM Architecture & Admin.',
-    description: 'Deep expertise in Salesforce CRM, dashboard creation, and integration management. Experience instructing teams on Salesforce usage for campaign tracking.',
-    coordinates: { x: 80, y: 20 },
-    relatedIds: ['role-salesforce', 'skill-ops'],
-    icon: 'cog'
-  },
-  {
-    id: 'tech-abm-platforms',
-    districtId: 'technologies',
-    type: 'technology',
-    label: 'ABM Platforms',
-    summary: 'Demandbase & 6sense.',
-    description: 'Implementation and orchestration of ABM platforms. Leveraging intent data and predictive analytics to identify in-market accounts and personalize journeys.',
-    coordinates: { x: 75, y: 28 },
-    relatedIds: ['role-prgx', 'skill-abm'],
-    icon: 'cog'
-  },
-  {
-    id: 'tech-martech',
-    districtId: 'technologies',
-    type: 'technology',
-    label: 'Marketing Automation',
-    summary: 'Marketo, Eloqua, HubSpot.',
-    description: 'Advanced nurture streams, lead scoring models, and revenue cycle analytics. Managed end-to-end demand gen programs using Marketo and Salesforce.',
-    coordinates: { x: 85, y: 25 },
-    relatedIds: ['role-startups', 'skill-demand'],
-    icon: 'cog'
-  },
-  {
-    id: 'tech-analytics',
-    districtId: 'technologies',
-    type: 'technology',
-    label: 'Analytics Stack',
-    summary: 'Tableau, GA4, Power BI.',
-    description: 'Visualizing data to drive business decisions. Migrated spreadsheet-based scorecards to Tableau at Salesforce.',
-    coordinates: { x: 82, y: 35 },
-    relatedIds: ['skill-analytics'],
-    icon: 'cog'
+    id: "skill-ppc",
+    label: "Paid Media / SEM",
+    districtId: "marketing",
+    type: "skill",
+    startYear: 2006,
+    endYear: 2025,
+    x: 3600, y: 750,
+    summary: "Performance Marketing.",
+    description: "Managing Google Ads and LinkedIn campaigns with a focus on ROAS and CAC.",
+    metrics: [],
+    relatedIds: ["role-salem", "role-prgx"]
   },
 
-  // --- Industries District ---
+  // =========================================================================
+  // SILICON VALLEY DISTRICT (The Scale Up: 2011 - Present)
+  // Location: Center (The Future Hub)
+  // =========================================================================
   {
-    id: 'ind-saas',
-    districtId: 'industries',
-    type: 'industry',
-    label: 'SaaS / Enterprise Tech',
-    summary: 'B2B Software & Subscription Models.',
-    description: 'Extensive background in the subscription economy, ARR growth, and retention strategies across Salesforce, Red Hat, and PRGX.',
-    coordinates: { x: 75, y: 75 },
-    relatedIds: ['role-salesforce', 'role-redhat'],
-    icon: 'globe'
+    id: "role-crowd",
+    label: "Crowd Factory",
+    districtId: "silicon-valley",
+    type: "role",
+    startYear: 2011,
+    endYear: 2012,
+    x: 1700, y: 1600, 
+    summary: "Sr. Mgr Marketing.",
+    description: "Delivered lead gen roadmap with Marketo/Salesforce. Acquired by Marketo.",
+    metrics: ["43% Net New Leads QoQ", "164% Visitor Growth"],
+    relatedIds: ["role-embarcadero", "tech-marketo"]
   },
   {
-    id: 'ind-fintech',
-    districtId: 'industries',
-    type: 'industry',
-    label: 'FinTech & Services',
-    summary: 'Financial Services Sector.',
-    description: 'Experience bridging traditional banking and modern solutions via roles at Bank of Tokyo, S&P, and Goldman Sachs.',
-    coordinates: { x: 82, y: 80 },
-    relatedIds: ['role-early-finance'],
-    icon: 'globe'
+    id: "role-get-sat",
+    label: "Get Satisfaction",
+    districtId: "silicon-valley",
+    type: "role",
+    startYear: 2012,
+    endYear: 2014,
+    x: 1800, y: 1450, 
+    summary: "Director Demand Gen.",
+    description: "Responsible for all Demand Gen: Lead Gen, Automation, SEM, SEO, and Sales Enablement.",
+    metrics: ["End-to-End Demand Gen", "ROI Analysis"],
+    relatedIds: ["role-crowd", "tech-marketo"]
   },
   {
-    id: 'ind-logistics',
-    districtId: 'industries',
-    type: 'industry',
-    label: 'Logistics & Manufacturing',
-    summary: 'Supply Chain Technologies.',
-    description: 'Targeted enterprise companies in Transport Logistics, Fleet Management, and Industrial Manufacturing during tenure at AMCS Group.',
-    coordinates: { x: 70, y: 85 },
-    relatedIds: ['role-amcs'],
-    icon: 'globe'
+    id: "role-salesforce",
+    label: "Salesforce",
+    districtId: "silicon-valley",
+    type: "role",
+    startYear: 2014,
+    endYear: 2021,
+    x: 2048, y: 1500, // Center Stage
+    summary: "Global Practice Leader.",
+    description: "7+ years leading Global Marketing Ops and Enterprise Campaigns. Supported 95+ marketers and Fortune 50 accounts.",
+    metrics: ["87% Pipeline Lift", "Reduced Reporting 4d to 2h"],
+    relatedIds: ["tech-salesforce", "skill-ops", "role-get-sat"]
   },
+  {
+    id: "role-redhat",
+    label: "Red Hat",
+    districtId: "silicon-valley",
+    type: "role",
+    startYear: 2021,
+    endYear: 2023,
+    x: 2300, y: 1300, 
+    summary: "Sr. Principal PM, ABM.",
+    description: "Designed Global ABM Customer Activation framework providing guidance for 200+ Enterprise customers.",
+    metrics: ["33% of Global Pipeline", "25% MQL Increase"],
+    relatedIds: ["role-salesforce", "skill-abm"]
+  },
+  {
+    id: "role-amcs",
+    label: "AMCS Group",
+    districtId: "silicon-valley",
+    type: "role",
+    startYear: 2023,
+    endYear: 2024,
+    x: 2400, y: 1550, 
+    summary: "Director ABM.",
+    description: "Generated $1.2M pipeline in 90 days by deploying industry-related paid media campaigns.",
+    metrics: ["$1.2M Pipeline in 90d", "50% ROI Improvement"],
+    relatedIds: ["role-redhat", "ind-logistics"]
+  },
+  {
+    id: "role-prgx",
+    label: "PRGX Global",
+    districtId: "silicon-valley",
+    type: "role",
+    startYear: 2024,
+    endYear: 2025,
+    x: 2200, y: 1700, 
+    summary: "Director Digital & ABM.",
+    description: "Architected unified revenue operating model integrating Demandbase and CRM. Current role.",
+    metrics: ["87% Pipeline Boost YoY", "500% Team Expansion"],
+    relatedIds: ["role-amcs", "tech-6sense"]
+  },
+
+  // =========================================================================
+  // TECH STACK DISTRICT (Tools & Platforms)
+  // Location: Bottom Right (The Servers)
+  // =========================================================================
+  {
+    id: "tech-salesforce",
+    label: "Salesforce CRM",
+    districtId: "technologies",
+    type: "technology",
+    startYear: 2011, // Started using at Crowd Factory
+    endYear: 2025,
+    x: 3300, y: 2200,
+    summary: "CRM & Ecosystem.",
+    description: "Deep experience in configuration, flow automation, and sales alignment within SFDC.",
+    metrics: [],
+    relatedIds: ["role-salesforce"]
+  },
+  {
+    id: "tech-marketo",
+    label: "Marketo / Adobe",
+    districtId: "technologies",
+    type: "technology",
+    startYear: 2011,
+    endYear: 2025,
+    x: 3500, y: 2300,
+    summary: "Marketing Automation.",
+    description: "Expert level workflow automation, email marketing, and lead lifecycle management.",
+    metrics: [],
+    relatedIds: ["role-crowd", "role-salesforce"]
+  },
+  {
+    id: "tech-6sense",
+    label: "6sense / Demandbase",
+    districtId: "technologies",
+    type: "technology",
+    startYear: 2018,
+    endYear: 2025,
+    x: 3000, y: 2100,
+    summary: "ABM Platforms.",
+    description: " leveraging intent data and predictive analytics to prioritize sales outreach.",
+    metrics: [],
+    relatedIds: ["skill-abm", "role-prgx"]
+  },
+  {
+    id: "tech-hubspot",
+    label: "HubSpot",
+    districtId: "technologies",
+    type: "technology",
+    startYear: 2016,
+    endYear: 2025,
+    x: 3600, y: 2100,
+    summary: "Inbound Marketing.",
+    description: "Full stack marketing automation and CRM management for growth stage companies.",
+    metrics: [],
+    relatedIds: ["role-salem"]
+  },
+
+  // =========================================================================
+  // EXPERTISE & INDUSTRIES (Strategic Layer)
+  // Location: Bottom Left & Scattered
+  // =========================================================================
+  {
+    id: "skill-abm",
+    label: "ABM Strategy",
+    districtId: "marketing", // Visually near marketing
+    type: "skill",
+    startYear: 2014,
+    endYear: 2025,
+    x: 3200, y: 950,
+    summary: "Account Based Marketing.",
+    description: "Orchestrating multi-channel campaigns targeting high-value enterprise accounts.",
+    metrics: ["Targeted Fortune 500s"],
+    relatedIds: ["role-salesforce", "role-redhat"]
+  },
+  {
+    id: "skill-ops",
+    label: "RevOps / Mktg Ops",
+    districtId: "marketing",
+    type: "skill",
+    startYear: 2008,
+    endYear: 2025,
+    x: 3500, y: 1050,
+    summary: "Operational Excellence.",
+    description: "Building scalable tech stacks, naming conventions, and attribution models to prove ROI.",
+    metrics: ["Attribution Modeling"],
+    relatedIds: ["role-salesforce", "role-prgx"]
+  },
+  {
+    id: "ind-fintech",
+    label: "FinTech & Banking",
+    districtId: "industries",
+    type: "industry",
+    startYear: 2000,
+    endYear: 2006,
+    x: 800, y: 2400, // Bottom Left
+    summary: "Financial Services.",
+    description: "Navigating high-compliance, data-sensitive financial sectors.",
+    metrics: [],
+    relatedIds: ["role-goldman", "role-btm"]
+  },
+  {
+    id: "ind-saas",
+    label: "SaaS / Enterprise",
+    districtId: "industries",
+    type: "industry",
+    startYear: 2011,
+    endYear: 2025,
+    x: 1000, y: 2100,
+    summary: "B2B Technology.",
+    description: "Growth strategies for subscription-based enterprise technology.",
+    metrics: [],
+    relatedIds: ["role-salesforce", "role-redhat"]
+  },
+  {
+    id: "ind-logistics",
+    label: "Logistics & Mfg",
+    districtId: "industries",
+    type: "industry",
+    startYear: 2023,
+    endYear: 2024,
+    x: 1200, y: 2300,
+    summary: "Industrial Tech.",
+    description: "Digital transformation for traditional industrial sectors.",
+    metrics: [],
+    relatedIds: ["role-amcs"]
+  }
 ];
+
+// --- GROUPING LOGIC ---
+export const getGroupedData = () => {
+  const groups = {
+    "role": { label: "Experience", items: [] },
+    "skill": { label: "Expertise", items: [] },
+    "technology": { label: "Technologies", items: [] },
+    "industry": { label: "Industries", items: [] }
+  };
+
+  RESUME_DATA.forEach(item => {
+    if (groups[item.type]) {
+      groups[item.type].items.push(item);
+    }
+  });
+
+  return groups;
+};

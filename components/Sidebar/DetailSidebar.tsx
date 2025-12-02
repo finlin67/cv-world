@@ -79,7 +79,8 @@ export const DetailSidebar: React.FC<DetailSidebarProps> = ({ hotspot, hotspots,
 
   return (
     <div 
-      className={`fixed top-0 right-0 h-full w-80 md:w-96 bg-ui-panel border-l border-gray-700 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto ${hotspot ? 'translate-x-0' : 'translate-x-full'}`}
+      // I changed 'bg-ui-panel' to 'bg-[#0b1221]' below
+      className={`fixed top-0 right-0 h-full w-80 md:w-96 bg-[#0b1221] border-l border-gray-700 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 overflow-y-auto ${hotspot ? 'translate-x-0' : 'translate-x-full'}`}
     >
       {hotspot && district && (
         <div className="p-6 pb-20">
@@ -153,22 +154,22 @@ export const DetailSidebar: React.FC<DetailSidebarProps> = ({ hotspot, hotspots,
                         onClick={() => onRelatedClick(rid)}
                         className="group flex items-center p-3 rounded-lg bg-gray-800 border border-gray-700 hover:bg-gray-700 hover:border-blue-500/50 hover:shadow-lg transition-all text-left w-full relative overflow-hidden"
                       >
-                         <div className={`absolute left-0 top-0 bottom-0 w-1 ${rDistrict.color} transition-all group-hover:w-1.5`}></div>
-                         <div className={`w-10 h-10 rounded-lg mr-3 flex items-center justify-center ${rDistrict.color} bg-opacity-20 text-white shadow-sm group-hover:scale-110 transition-transform ml-2`}>
-                           <Icon icon={rDistrict.icon} className="w-5 h-5" />
-                         </div>
-                         <div className="flex-1">
-                           <div className="text-sm font-bold text-white group-hover:text-blue-200 transition-colors">{related.label}</div>
-                           <div className="text-xs text-gray-400 flex items-center gap-1">
-                             <span className="opacity-75">{rDistrict.name}</span>
-                             <span className="text-gray-600">•</span>
-                             <Icon icon={related.icon} className="w-3 h-3 text-gray-400" />
-                             <span className="uppercase tracking-wider text-[10px] text-gray-500">{related.type}</span>
-                           </div>
-                         </div>
-                         <div className="text-gray-500 group-hover:text-white transition-colors transform group-hover:translate-x-1">
-                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                         </div>
+                          <div className={`absolute left-0 top-0 bottom-0 w-1 ${rDistrict.color} transition-all group-hover:w-1.5`}></div>
+                          <div className={`w-10 h-10 rounded-lg mr-3 flex items-center justify-center ${rDistrict.color} bg-opacity-20 text-white shadow-sm group-hover:scale-110 transition-transform ml-2`}>
+                            <Icon icon={rDistrict.icon} className="w-5 h-5" />
+                          </div>
+                          <div className="flex-1">
+                            <div className="text-sm font-bold text-white group-hover:text-blue-200 transition-colors">{related.label}</div>
+                            <div className="text-xs text-gray-400 flex items-center gap-1">
+                              <span className="opacity-75">{rDistrict.name}</span>
+                              <span className="text-gray-600">•</span>
+                              <Icon icon={related.icon} className="w-3 h-3 text-gray-400" />
+                              <span className="uppercase tracking-wider text-[10px] text-gray-500">{related.type}</span>
+                            </div>
+                          </div>
+                          <div className="text-gray-500 group-hover:text-white transition-colors transform group-hover:translate-x-1">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                          </div>
                       </button>
                     );
                   })}
