@@ -1,11 +1,11 @@
 import { District } from './types';
 
 // Matches your new file
-export const MAP_IMAGE_URL = 'map-panoramic.jpg'; 
+export const MAP_IMAGE_URL = 'city-final90.jpg'; 
 
 // NEW 6K DIMENSIONS
-export const MAP_WIDTH = 6336; 
-export const MAP_HEIGHT = 2688;
+export const MAP_WIDTH = 5702; 
+export const MAP_HEIGHT = 2419;
 
 export const DISTRICTS: Record<string, District> = {
   'wall-street': {
